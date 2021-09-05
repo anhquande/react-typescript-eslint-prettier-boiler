@@ -8,6 +8,7 @@ import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
 import About from './modules/about/About';
+import AlarmPage from './modules/alarm';
 import Home from './modules/home/Home';
 
 const theme = createTheme({
@@ -32,6 +33,9 @@ function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
+                <Link to="/alarm">Alarm</Link>
+              </li>
+              <li>
                 <Link to="/about">About</Link>
               </li>
             </ul>
@@ -40,6 +44,9 @@ function App() {
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>
+            <Route path="/alarm">
+              <AlarmPage />
+            </Route>
             <Route path="/about">
               <About title={'Sandbox'} version={'1.0.0'} />
             </Route>
